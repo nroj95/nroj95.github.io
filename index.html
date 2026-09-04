@@ -10,7 +10,7 @@
         - shows a random work-mode subtitle on each page load
         - provides separate Google and Google Norge search bars
         - groups links into simple categories
-        - uses a muted low-contrast palette that is comfortable in dark rooms
+        - uses a muted low-contrast palette that stays comfortable in light mode
         - stays fully static so it works directly from a local file path
     -->
 
@@ -20,17 +20,27 @@
 
     <style>
         :root {
-            --background: #17151a;
-            --background-glow: #26212b;
-            --panel: #201d23;
-            --panel-soft: #29252d;
-            --panel-hover: #302b34;
-            --text: #d7d0da;
-            --muted: #9e96a3;
-            --accent: #a9879d;
-            --accent-soft: #806978;
-            --border: #38323d;
-            --button-text: #201a1f;
+            /* soft warm daylight */
+            --background: #e6e7d8;
+            --background-glow: #f2f0df;
+
+            /* quiet paper and stone surfaces */
+            --panel: #dedfcc;
+            --panel-soft: #d1d5bf;
+            --panel-hover: #c5ccb1;
+
+            /* dark bark text */
+            --text: #292d27;
+            --muted: #62695c;
+
+            /* muted moss accent */
+            --accent: #aebd91;
+            --accent-soft: #7f8e68;
+
+            /* earthy separators */
+            --border: #a8aa94;
+
+            --button-text: #25291f;
         }
 
         * {
@@ -99,7 +109,7 @@
         }
 
         input::placeholder {
-            color: #77707c;
+            color: #777c70;
         }
 
         input:focus {
@@ -118,7 +128,7 @@
         }
 
         button:hover {
-            background: #b292a7;
+            background: #bbc99e;
         }
 
         button:focus-visible,
