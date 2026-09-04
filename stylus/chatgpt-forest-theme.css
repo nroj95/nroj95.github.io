@@ -1,110 +1,93 @@
 /* =============================================================================
    purpose:
-   give chatgpt a calm forest-inspired dark theme with playful accent colors.
+   give chatgpt a calm forest-inspired light theme.
 
-   key behavior:
-   - uses deep pine and charcoal-green surfaces instead of flat black.
-   - separates text levels with mist, sage, and soft lavender.
-   - adds restrained berry, amber, and terracotta accents.
-   - keeps stronger component overrides scoped to the affected interface areas.
+   approach:
+   - keep chatgpt's native primary text colors.
+   - use moss, sage, bark, stone, and forest-floor tones.
+   - strengthen muted interface text and code comments for readability.
+   - use one consistent earthy border color.
+   - only override components confirmed to matter in light mode.
    ============================================================================= */
 
 
 /* =============================================================================
-   shared dark-theme variables
+   core theme
    ============================================================================= */
 
-html.dark,
-html.dark :not(:where(.light, .light *)) {
-    /* text */
-    --text-primary: #e4e8df !important;
-    --text-secondary: #b8c9bb !important;
-    --text-tertiary: #b8a9c7 !important;
+html:not(.dark),
+html:not(.dark) * {
+    /* pale forest background */
+    --main-surface-primary: #dedfcc !important;
+    --bg-primary: #f0f0dc !important;
 
-    /* primary backgrounds */
-    --bg-primary: #293631 !important;
-    --bg-primary-surface: #24312c !important;
-    --main-surface-primary: #24312c !important;
-    --sidebar-surface-primary: #1e2b27 !important;
+    /* soft moss sidebar */
+    --sidebar-surface-primary: #afc99d !important;
 
-    /* secondary backgrounds */
-    --bg-secondary: #526454 !important;    
-    --bg-secondary-surface: var(--main-surface-primary) !important;
-    --main-surface-secondary: #35463f !important;
-    --sidebar-surface-secondary: #2b3b35 !important;
+    /* muted leaf message bubbles */
+    --theme-user-msg-bg: #b3bba0 !important;
 
-    /* tertiary backgrounds */
-    --bg-tertiary: #465a50 !important;
-    --bg-tertiary-surface: #465a50 !important;
-    --main-surface-tertiary: #465a50 !important;
-    --sidebar-surface-tertiary: #3a4d44 !important;
+    /* pale sage current chat */
+    --menu-item-active: #f0ffe0 !important;
 
-    /* message and code backgrounds */
-    --theme-user-msg-bg: #302f38 !important;
-    --code-block-surface: #1b2724 !important;
-    --tw-prose-inline-code-bg: #485048 !important;
+    /* dark bark send button */
+    --theme-submit-btn-bg: #6f5a3a !important;
 
-    /* menu states */
-    --menu-item-active: #655b76 !important;
-    --menu-item-highlighted: #344740 !important;
+    /* soft forest-floor composer */
+    --composer-surface-primary: #e0f2d0 !important;
 
-    /* button and control hover states */
-    --surface-hover: #40564d !important;
-    --interactive-bg-secondary-hover: #496159 !important;
+    /* pale stone elevated surfaces */
+    --bg-elevated-secondary: #f2f1da !important;
 
-    /* enabled submit button */
-    --theme-submit-btn-bg: #b9cda8 !important;
+    /* consistent earthy borders */
+    --border-light: #474a3a !important;
+    --border-heavy: #474a3a !important;
+
+    /* stronger muted interface text */
+    --text-tertiary: #2f392f !important;
+
+    /* bark-colored code comments */
+    --gray-550: #654126 !important;
 }
 
 
 /* =============================================================================
-   scoped component overrides
+   settings
    ============================================================================= */
 
-/* give sidebar menu items a clearer hover than menus elsewhere */
-html.dark #stage-slideover-sidebar .__menu-item {
-    --menu-item-highlighted: #3d544a !important;
+/* match the settings search outline to the global border color */
+html:not(.dark) input[placeholder="Search settings"] {
+    border: 1px solid var(--border-light) !important;
 }
 
-/* give menu section headings a warm woodland accent */
-html.dark .__menu-label {
-    color: #d6ae68 !important;
+
+/* =============================================================================
+   popover menus
+   ============================================================================= */
+
+/* mushroom-toned menu surface */
+html:not(.dark) .popover,
+html:not(.dark) [role="dialog"].popover {
+    background-color: #d9d3bd !important;
 }
 
-/* use a deep mushroom tone for account menus and other popovers */
-html.dark .popover,
-html.dark [role="dialog"].popover {
-    background-color: #292b2d !important;
+/* warm pale highlight for the active menu item */
+html:not(.dark) .popover .__menu-item[data-active] {
+    background-color: #fffbda !important;
 }
 
-/* give share and other ghost buttons a clearer forest hover */
-html.dark .btn-ghost:not(:disabled):not([data-disabled]):hover {
-    background-color: #496159 !important;
+
+/* =============================================================================
+   chat / work switcher
+   ============================================================================= */
+
+/* deep canopy background */
+html:not(.dark) #page-header .dark\:bg-\[\#131313\] {
+    background-color: #4f7648 !important;
 }
 
-/* give the idle send button a playful terracotta accent */
-html.dark .composer-submit-btn:disabled,
-html.dark .composer-submit-btn[data-visually-disabled] {
-    --text-quaternary: #c77f67 !important;
-}
-
-/* keep user-message text quieter than assistant replies */
-html.dark [data-message-author-role="user"] .whitespace-pre-wrap {
-    color: #c8ccc2 !important;
-}
-
-/* give the top account-menu row a distinct hover and open background */
-html.dark .popover > .flex.flex-col > [role="menuitem"][data-has-submenu]:first-child {
-    --interactive-bg-secondary-selected: #4b4058 !important;
-}
-
-/* chat and work segmented control background */
-html.dark #page-header .dark\:bg-\[\#131313\] {
-    background-color: #18211e !important;
-}
-
-/* active chat or work segment background */
-html.dark #page-header .dark\:bg-token-bg-elevated-primary {
-    background-color: #2f3d37 !important;
+/* muted sunlight accent */
+html:not(.dark) #page-header .dark\:bg-token-bg-elevated-primary {
+    background-color: #d8c86c !important;
     border-color: transparent !important;
 }
