@@ -20,27 +20,53 @@
 
     <style>
         :root {
-            /* soft warm daylight */
-            --background: #e6e7d8;
-            --background-glow: #f2f0df;
+            /* source palette */
+            --ink: #181322;
+            --bark: #4b372c;
+            --brick: #a2423a;
+            --parchment: #cdc1a7;
 
-            /* quiet paper and stone surfaces */
-            --panel: #dedfcc;
-            --panel-soft: #d1d5bf;
-            --panel-hover: #c5ccb1;
+            /* warm parchment base */
+            --background: var(--parchment);
+            --background-glow: color-mix(
+                in srgb,
+                var(--parchment) 78%,
+                var(--brick) 22%
+            );
 
-            /* dark bark text */
-            --text: #292d27;
-            --muted: #62695c;
+            /* earthy layered surfaces */
+            --panel: color-mix(
+                in srgb,
+                var(--parchment) 84%,
+                var(--bark) 16%
+            );
+            --panel-soft: color-mix(
+                in srgb,
+                var(--parchment) 68%,
+                var(--bark) 32%
+            );
+            --panel-hover: color-mix(
+                in srgb,
+                var(--parchment) 58%,
+                var(--brick) 42%
+            );
 
-            /* muted moss accent */
-            --accent: #aebd91;
-            --accent-soft: #7f8e68;
+            /* dark text and warm secondary text */
+            --text: var(--ink);
+            --muted: var(--bark);
 
-            /* earthy separators */
-            --border: #a8aa94;
+            /* brick-red controls with dark hover */
+            --accent: var(--brick);
+            --accent-hover: var(--ink);
 
-            --button-text: #25291f;
+            /* warm brown separators */
+            --border: color-mix(
+                in srgb,
+                var(--bark) 62%,
+                var(--parchment) 38%
+            );
+
+            --button-text: var(--parchment);
         }
 
         * {
@@ -109,16 +135,16 @@
         }
 
         input::placeholder {
-            color: #777c70;
+            color: var(--muted);
         }
 
         input:focus {
-            border-color: var(--accent-soft);
+            border-color: var(--accent);
         }
 
         button {
             padding: 11px 15px;
-            border: 1px solid var(--accent-soft);
+            border: 1px solid var(--accent);
             border-radius: 11px;
             background: var(--accent);
             color: var(--button-text);
@@ -128,12 +154,12 @@
         }
 
         button:hover {
-            background: #bbc99e;
+            background: var(--accent-hover);
         }
 
         button:focus-visible,
         a:focus-visible {
-            outline: 2px solid var(--accent-soft);
+            outline: 2px solid var(--accent);
             outline-offset: 2px;
         }
 
@@ -175,7 +201,7 @@
 
         a:hover {
             background: var(--panel-hover);
-            border-color: var(--accent-soft);
+            border-color: var(--accent);
         }
     </style>
 </head>
@@ -294,32 +320,30 @@
         ];
 
         const subtitles = [
-            "make one small thing worth keeping.",
-            "start gentle. build momentum.",
-            "today is allowed to be simple.",
-            "follow the spark before it cools.",
-            "good work begins with showing up.",
-            "use what you have. make it yours.",
-            "curiosity is a perfectly good compass.",
-            "less pressure. more play.",
-            "tiny progress still changes the map.",
-            "make room for the weird idea.",
-            "you do not need permission to begin.",
-            "keep the rules that help. drop the rest.",
-            "one honest step beats a perfect plan.",
-            "build first. judge later.",
-            "leave a little room for surprise.",
-            "your pace is still a pace.",
-            "make something future-you will smile at.",
-            "breathe in. choose the next move.",
-            "today can be useful and kind.",
-            "create like nobody is grading it.",
-            "let the rough draft exist.",
-            "momentum loves a small beginning.",
-            "stay soft. stay stubborn.",
-            "try the idea that keeps returning.",
-            "make the day feel a little more yours.",
-            "love the process enough to continue. ❤️"
+            "happiness is loving. strength is a mind in control. health is breathing.",
+            "no matter how perfect or flawed you are, there will always be people who hate you.",
+            "words, conventions, obligations, rules, authority. let them stay tools, not masters.",
+            "stop restarting. start adapting. start creating.",
+            "it’s not about the cards you’ve got — it’s how you use them.",
+            "the first step to being perfect is realizing you already are.",
+            "no one’s perfect — and that’s perfect.",
+            "don’t tell them the way — show them the way.",
+            "break the wall — do it all.",
+            "you know what a happy person needs? nothing — because they’re already happy.",
+            "who cares if you fail — if you’re already happy?",
+            "breathe, motherf*cker!",
+            "happy, strong, and healthy — the rest is bullsh*t.",
+            "there’s more to it than meets the eye.",
+            "if you’ve got guts, you can do anything.",
+            "be the one who moves forward — no matter how dirty you get.",
+            "your only limits are the ones you set for yourself.",
+            "big risks lead to great rewards.",
+            "truth? meaning? just words.",
+            "don’t analyze everything — just feel. just be.",
+            "breath is everything.",
+            "comfort is boring. happiness is flat; suffering shapes the soul.",
+            "it’s not about motivation — it’s about love.",
+            "love, love, love — again and again and again! ❤️"
         ];
 
         greeting.textContent = greetings[currentHour];
