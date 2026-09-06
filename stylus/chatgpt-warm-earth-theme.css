@@ -23,9 +23,7 @@
 html:not(.dark),
 html:not(.dark) :where(.light) {
 
-    /* -------------------------------------------------------------------------
-       palette
-       ------------------------------------------------------------------------- */
+    /* palette */
 
     --nroj-ink: #181322;
     --nroj-bark: #4b372c;
@@ -33,15 +31,16 @@ html:not(.dark) :where(.light) {
     --nroj-sand: #cdc1a7;
 
 
-    /* -------------------------------------------------------------------------
-       derived surfaces
-       ------------------------------------------------------------------------- */
+    /* derived surfaces */
 
     --nroj-panel:
         color-mix(in srgb, var(--nroj-sand) 94%, var(--nroj-bark));
 
     --nroj-panel-strong:
         color-mix(in srgb, var(--nroj-sand) 86%, var(--nroj-bark));
+
+    --nroj-composer:
+        color-mix(in srgb, var(--nroj-sand) 82%, var(--nroj-bark));
 
     --nroj-warm:
         color-mix(in srgb, var(--nroj-sand) 90%, var(--nroj-rust));
@@ -58,10 +57,11 @@ html:not(.dark) :where(.light) {
     --nroj-popover:
         color-mix(in srgb, var(--nroj-sand) 97%, var(--nroj-bark));
 
+    --nroj-writing-block:
+        color-mix(in srgb, var(--nroj-sand) 84%, var(--nroj-bark));
 
-    /* -------------------------------------------------------------------------
-       derived text
-       ------------------------------------------------------------------------- */
+
+    /* derived text */
 
     --nroj-text-secondary:
         color-mix(in srgb, var(--nroj-bark) 72%, var(--nroj-ink));
@@ -70,9 +70,7 @@ html:not(.dark) :where(.light) {
         color-mix(in srgb, var(--nroj-bark) 82%, var(--nroj-ink));
 
 
-    /* -------------------------------------------------------------------------
-       main surfaces
-       ------------------------------------------------------------------------- */
+    /* main surfaces */
 
     --main-surface-primary: var(--nroj-sand) !important;
     --main-surface-background: var(--nroj-sand) !important;
@@ -83,9 +81,7 @@ html:not(.dark) :where(.light) {
     --main-surface-tertiary: var(--nroj-warm) !important;
 
 
-    /* -------------------------------------------------------------------------
-       general backgrounds
-       ------------------------------------------------------------------------- */
+    /* general backgrounds */
 
     --bg-primary: var(--nroj-sand) !important;
     --bg-secondary: var(--nroj-panel) !important;
@@ -95,21 +91,17 @@ html:not(.dark) :where(.light) {
     --bg-elevated-secondary: var(--nroj-warm) !important;
 
 
-    /* -------------------------------------------------------------------------
-       alternate / legacy surfaces
-       ------------------------------------------------------------------------- */
+    /* alternate surfaces */
 
     --message-surface: var(--nroj-warm) !important;
 
-    --composer-surface: var(--nroj-panel) !important;
-    --composer-surface-primary: var(--nroj-panel) !important;
+    --composer-surface: var(--nroj-composer) !important;
+    --composer-surface-primary: var(--nroj-composer) !important;
 
     --keyboard-open-mask-bg: var(--nroj-sand) !important;
 
 
-    /* -------------------------------------------------------------------------
-       sidebar
-       ------------------------------------------------------------------------- */
+    /* sidebar */
 
     --component-sidebar-bg: var(--nroj-panel-strong) !important;
 
@@ -126,14 +118,10 @@ html:not(.dark) :where(.light) {
     --sidebar-icon: var(--nroj-bark) !important;
 
 
-    /* -------------------------------------------------------------------------
-       text
-       ------------------------------------------------------------------------- */
+    /* text */
 
     --text-primary: var(--nroj-ink) !important;
     --text-secondary: var(--nroj-text-secondary) !important;
-
-    /* intentionally stronger than chatgpt's default tertiary text */
     --text-tertiary: var(--nroj-text-muted) !important;
 
     --text-quaternary:
@@ -142,42 +130,32 @@ html:not(.dark) :where(.light) {
     --text-placeholder: var(--nroj-text-muted) !important;
 
 
-    /* -------------------------------------------------------------------------
-       icons
-       ------------------------------------------------------------------------- */
+    /* icons */
 
     --icon-primary: var(--nroj-ink) !important;
     --icon-secondary: var(--nroj-bark) !important;
     --icon-tertiary: var(--nroj-text-muted) !important;
 
 
-    /* -------------------------------------------------------------------------
-       user messages
-       ------------------------------------------------------------------------- */
+    /* user messages */
 
     --theme-user-msg-bg: var(--nroj-warm-strong) !important;
     --theme-user-msg-text: var(--nroj-ink) !important;
 
 
-    /* -------------------------------------------------------------------------
-       submit button
-       ------------------------------------------------------------------------- */
+    /* submit button */
 
     --theme-submit-btn-bg: var(--nroj-ink) !important;
     --theme-submit-btn-text: var(--nroj-sand) !important;
 
 
-    /* -------------------------------------------------------------------------
-       secondary buttons
-       ------------------------------------------------------------------------- */
+    /* secondary buttons */
 
     --theme-secondary-btn-bg: var(--nroj-panel) !important;
     --theme-secondary-btn-text: var(--nroj-ink) !important;
 
 
-    /* -------------------------------------------------------------------------
-       accent
-       ------------------------------------------------------------------------- */
+    /* accent */
 
     --theme-entity-accent: var(--nroj-rust) !important;
     --theme-accent-text: var(--nroj-rust) !important;
@@ -189,9 +167,7 @@ html:not(.dark) :where(.light) {
     --theme-accent-pill-text-hover: var(--nroj-ink) !important;
 
 
-    /* -------------------------------------------------------------------------
-       links / selection
-       ------------------------------------------------------------------------- */
+    /* links / selection */
 
     --link: var(--nroj-rust) !important;
     --link-hover: var(--nroj-bark) !important;
@@ -200,16 +176,12 @@ html:not(.dark) :where(.light) {
         color-mix(in srgb, var(--nroj-rust) 34%, var(--nroj-sand)) !important;
 
 
-    /* -------------------------------------------------------------------------
-       tooltip
-       ------------------------------------------------------------------------- */
+    /* tooltip */
 
     --bg-tooltip: var(--nroj-ink) !important;
 
 
-    /* -------------------------------------------------------------------------
-       general interaction system
-       ------------------------------------------------------------------------- */
+    /* general interaction system */
 
     --surface-hover: var(--nroj-hover) !important;
 
@@ -224,9 +196,7 @@ html:not(.dark) :where(.light) {
     --interactive-bg-press-secondary: var(--nroj-active) !important;
 
 
-    /* -------------------------------------------------------------------------
-       primary interactions
-       ------------------------------------------------------------------------- */
+    /* primary interactions */
 
     --interactive-bg-hover-primary:
         color-mix(in srgb, var(--nroj-bark) 75%, var(--nroj-ink)) !important;
@@ -235,9 +205,7 @@ html:not(.dark) :where(.light) {
     --interactive-bg-primary-selected: var(--nroj-bark) !important;
 
 
-    /* -------------------------------------------------------------------------
-       accent interactions
-       ------------------------------------------------------------------------- */
+    /* accent interactions */
 
     --interactive-bg-hover-accent:
         color-mix(in srgb, var(--nroj-rust) 88%, var(--nroj-bark)) !important;
@@ -246,9 +214,7 @@ html:not(.dark) :where(.light) {
         color-mix(in srgb, var(--nroj-rust) 74%, var(--nroj-bark)) !important;
 
 
-    /* -------------------------------------------------------------------------
-       interactive-button aliases
-       ------------------------------------------------------------------------- */
+    /* interactive-button aliases */
 
     --interactive-button-bg-hover-primary:
         var(--interactive-bg-hover-primary) !important;
@@ -269,9 +235,7 @@ html:not(.dark) :where(.light) {
         var(--interactive-bg-press-accent) !important;
 
 
-    /* -------------------------------------------------------------------------
-       danger interactions
-       ------------------------------------------------------------------------- */
+    /* danger interactions */
 
     --interactive-bg-hover-danger-ghost:
         color-mix(in srgb, var(--nroj-rust) 18%, transparent) !important;
@@ -360,7 +324,7 @@ html:not(.dark) .prose {
 
 
 /* =============================================================================
-   file / source citation pills
+   file citation pills
    ============================================================================= */
 
 html:not(.dark) [data-file-citation-group-identity] > button {
@@ -369,6 +333,44 @@ html:not(.dark) [data-file-citation-group-identity] > button {
 
 html:not(.dark) [data-file-citation-group-identity] > button:hover {
     background-color: var(--nroj-hover) !important;
+}
+
+
+/* =============================================================================
+   webpage citation pills
+   ============================================================================= */
+
+@layer components {
+
+    html:not(.dark) [data-testid="webpage-citation-pill"] > a {
+        background-color: var(--nroj-panel-strong) !important;
+    }
+
+    html:not(.dark) [data-testid="webpage-citation-pill"] > a:hover {
+        background-color: var(--nroj-hover) !important;
+    }
+}
+
+
+/* =============================================================================
+   writing blocks
+   ============================================================================= */
+
+html:not(.dark) [data-oai-writing-block-surface] {
+    --bg-primary: var(--nroj-writing-block) !important;
+    --wb-surface-primary: var(--nroj-writing-block) !important;
+}
+
+
+/* =============================================================================
+   file tiles
+   ============================================================================= */
+
+html:not(.dark) [class~="group/file-tile"] {
+    --bg-primary: var(--nroj-panel-strong) !important;
+
+    --interactive-bg-secondary-hover: var(--nroj-hover) !important;
+    --interactive-bg-secondary-press: var(--nroj-active) !important;
 }
 
 
@@ -459,21 +461,15 @@ html:not(.dark) [data-testid="modal-settings"] input[name="settings-search"]::pl
    radix settings switches
    ============================================================================= */
 
-html:not(.dark)
-    [data-testid="modal-settings"]
-    [role="switch"][data-state="unchecked"] {
+html:not(.dark) [data-testid="modal-settings"] [role="switch"][data-state="unchecked"] {
     background-color: var(--nroj-panel-strong) !important;
 }
 
-html:not(.dark)
-    [data-testid="modal-settings"]
-    [role="switch"][data-state="checked"] {
+html:not(.dark) [data-testid="modal-settings"] [role="switch"][data-state="checked"] {
     background-color: var(--nroj-rust) !important;
 }
 
-html:not(.dark)
-    [data-testid="modal-settings"]
-    [role="switch"] > span {
+html:not(.dark) [data-testid="modal-settings"] [role="switch"] > span {
     background-color: var(--nroj-sand) !important;
 }
 
@@ -482,9 +478,11 @@ html:not(.dark)
    settings dropdowns
    ============================================================================= */
 
-html:not(.dark)
-    [data-testid="modal-settings"]
-    :is(select, .form-select, [role="combobox"]) {
+html:not(.dark) [data-testid="modal-settings"] :is(
+    select,
+    .form-select,
+    [role="combobox"]
+) {
     background-color: var(--nroj-sand) !important;
     color: var(--nroj-ink) !important;
 }
@@ -494,13 +492,11 @@ html:not(.dark)
    literal-white settings buttons
    ============================================================================= */
 
-html:not(.dark)
-    [data-testid="modal-settings"]
-    button:is(
-        [class~="bg-white"],
-        [class~="!bg-white"],
-        [class~="bg-white!"]
-    ) {
+html:not(.dark) [data-testid="modal-settings"] button:is(
+    [class~="bg-white"],
+    [class~="!bg-white"],
+    [class~="bg-white!"]
+) {
     background-color: var(--nroj-sand) !important;
 
     box-shadow:
@@ -513,50 +509,25 @@ html:not(.dark)
    thinking-effort slider
    ============================================================================= */
 
-
-/* track */
-
-html:not(.dark)
-    [data-model-reasoning-effort-slider]
-    ._9wXMRW_Track {
+html:not(.dark) [data-model-reasoning-effort-slider] ._9wXMRW_Track {
     background: var(--nroj-panel-strong) !important;
 }
 
-
-/* filled range */
-
-html:not(.dark)
-    [data-model-reasoning-effort-slider]
-    ._9wXMRW_Range {
+html:not(.dark) [data-model-reasoning-effort-slider] ._9wXMRW_Range {
     background: var(--nroj-rust) !important;
 }
 
-
-/* thumb */
-
-html:not(.dark)
-    [data-model-reasoning-effort-slider]
-    ._9wXMRW_Thumb {
+html:not(.dark) [data-model-reasoning-effort-slider] ._9wXMRW_Thumb {
     background: var(--nroj-sand) !important;
     border-color: var(--nroj-bark) !important;
     color: var(--nroj-ink) !important;
 }
 
-
-/* selected ticks */
-
-html:not(.dark)
-    [data-model-reasoning-effort-slider]
-    ._9wXMRW_Tick[data-selected="true"] {
+html:not(.dark) [data-model-reasoning-effort-slider] ._9wXMRW_Tick[data-selected="true"] {
     background-color: var(--nroj-sand) !important;
 }
 
-
-/* unselected ticks */
-
-html:not(.dark)
-    [data-model-reasoning-effort-slider]
-    ._9wXMRW_Tick[data-selected="false"] {
+html:not(.dark) [data-model-reasoning-effort-slider] ._9wXMRW_Tick[data-selected="false"] {
     background-color:
         color-mix(in srgb, var(--nroj-bark) 65%, transparent) !important;
 }
@@ -566,9 +537,6 @@ html:not(.dark)
    charts
    ============================================================================= */
 
-
-/* bars */
-
 html:not(.dark)
     [data-testid="modal-settings"]
     .recharts-bar-rectangle
@@ -576,53 +544,31 @@ html:not(.dark)
     fill: var(--nroj-rust) !important;
 }
 
-
-/* lines */
-
-html:not(.dark)
-    [data-testid="modal-settings"]
-    .recharts-line-curve {
+html:not(.dark) [data-testid="modal-settings"] .recharts-line-curve {
     stroke: var(--nroj-rust) !important;
 }
 
-
-/* area fill */
-
-html:not(.dark)
-    [data-testid="modal-settings"]
-    .recharts-area-area {
+html:not(.dark) [data-testid="modal-settings"] .recharts-area-area {
     fill:
         color-mix(in srgb, var(--nroj-rust) 34%, transparent) !important;
 }
 
-
-/* area outline */
-
-html:not(.dark)
-    [data-testid="modal-settings"]
-    .recharts-area-curve {
+html:not(.dark) [data-testid="modal-settings"] .recharts-area-curve {
     stroke: var(--nroj-rust) !important;
 }
 
-
-/* dots */
-
-html:not(.dark)
-    [data-testid="modal-settings"]
-    :is(
-        .recharts-dot,
-        .recharts-active-dot,
-        .recharts-reference-dot,
-        .recharts-scatter-symbol
-    ),
-html:not(.dark)
-    [data-testid="modal-settings"]
-    :is(
-        .recharts-dot,
-        .recharts-active-dot,
-        .recharts-reference-dot,
-        .recharts-scatter-symbol
-    ) * {
+html:not(.dark) [data-testid="modal-settings"] :is(
+    .recharts-dot,
+    .recharts-active-dot,
+    .recharts-reference-dot,
+    .recharts-scatter-symbol
+),
+html:not(.dark) [data-testid="modal-settings"] :is(
+    .recharts-dot,
+    .recharts-active-dot,
+    .recharts-reference-dot,
+    .recharts-scatter-symbol
+) * {
     fill: var(--nroj-rust) !important;
     stroke: var(--nroj-rust) !important;
 }
@@ -632,43 +578,18 @@ html:not(.dark)
    known hard-coded interaction escapes
    ============================================================================= */
 
-
-/* focus:bg-black/4 */
-
 html:not(.dark) [class~="focus:bg-black/4"]:focus {
     background-color: var(--nroj-hover) !important;
 }
-
-
-/* hover:bg-black/5 */
 
 html:not(.dark) [class~="hover:bg-black/5"]:hover {
     background-color: var(--nroj-hover) !important;
 }
 
-
-/* hover:bg-black/[0.04] */
-
 html:not(.dark) [class~="hover:bg-black/[0.04]"]:hover {
     background-color: var(--nroj-hover) !important;
 }
 
-
-/* btn-ghost hard-coded hover */
-
 html:not(.dark) .btn-ghost:not(:disabled):not([data-disabled]):hover {
-    background-color: var(--nroj-hover) !important;
-}
-
-
-/* =============================================================================
-   hard-coded #f4f4f4 surfaces
-   ============================================================================= */
-
-html:not(.dark) [class~="bg-[#f4f4f4]"] {
-    background-color: var(--nroj-panel-strong) !important;
-}
-
-html:not(.dark) [class~="bg-[#f4f4f4]"]:hover {
     background-color: var(--nroj-hover) !important;
 }
