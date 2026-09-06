@@ -1,0 +1,674 @@
+/* =============================================================================
+   chatgpt warm earth light theme
+   =============================================================================
+
+   palette:
+   ink     #181322
+   bark    #4b372c
+   rust    #a2423a
+   sand    #cdc1a7
+
+   direction:
+   - bright warm surfaces
+   - strong readable text
+   - restrained brown
+   - rust reserved for accents and selected states
+   ============================================================================= */
+
+
+/* =============================================================================
+   broad light-theme tokens
+   ============================================================================= */
+
+html:not(.dark),
+html:not(.dark) :where(.light) {
+
+    /* -------------------------------------------------------------------------
+       palette
+       ------------------------------------------------------------------------- */
+
+    --nroj-ink: #181322;
+    --nroj-bark: #4b372c;
+    --nroj-rust: #a2423a;
+    --nroj-sand: #cdc1a7;
+
+
+    /* -------------------------------------------------------------------------
+       derived surfaces
+       ------------------------------------------------------------------------- */
+
+    --nroj-panel:
+        color-mix(in srgb, var(--nroj-sand) 94%, var(--nroj-bark));
+
+    --nroj-panel-strong:
+        color-mix(in srgb, var(--nroj-sand) 86%, var(--nroj-bark));
+
+    --nroj-warm:
+        color-mix(in srgb, var(--nroj-sand) 90%, var(--nroj-rust));
+
+    --nroj-warm-strong:
+        color-mix(in srgb, var(--nroj-sand) 74%, var(--nroj-rust));
+
+    --nroj-hover:
+        color-mix(in srgb, var(--nroj-sand) 80%, var(--nroj-rust));
+
+    --nroj-active:
+        color-mix(in srgb, var(--nroj-sand) 66%, var(--nroj-rust));
+
+    --nroj-popover:
+        color-mix(in srgb, var(--nroj-sand) 97%, var(--nroj-bark));
+
+
+    /* -------------------------------------------------------------------------
+       derived text
+       ------------------------------------------------------------------------- */
+
+    --nroj-text-secondary:
+        color-mix(in srgb, var(--nroj-bark) 72%, var(--nroj-ink));
+
+    --nroj-text-muted:
+        color-mix(in srgb, var(--nroj-bark) 82%, var(--nroj-ink));
+
+
+    /* -------------------------------------------------------------------------
+       main surfaces
+       ------------------------------------------------------------------------- */
+
+    --main-surface-primary: var(--nroj-sand) !important;
+    --main-surface-background: var(--nroj-sand) !important;
+
+    --main-surface-secondary: var(--nroj-panel) !important;
+    --main-surface-secondary-selected: var(--nroj-active) !important;
+
+    --main-surface-tertiary: var(--nroj-warm) !important;
+
+
+    /* -------------------------------------------------------------------------
+       general backgrounds
+       ------------------------------------------------------------------------- */
+
+    --bg-primary: var(--nroj-sand) !important;
+    --bg-secondary: var(--nroj-panel) !important;
+    --bg-tertiary: var(--nroj-warm) !important;
+
+    --bg-elevated-primary: var(--nroj-popover) !important;
+    --bg-elevated-secondary: var(--nroj-warm) !important;
+
+
+    /* -------------------------------------------------------------------------
+       alternate / legacy surfaces
+       ------------------------------------------------------------------------- */
+
+    --message-surface: var(--nroj-warm) !important;
+
+    --composer-surface: var(--nroj-panel) !important;
+    --composer-surface-primary: var(--nroj-panel) !important;
+
+    --keyboard-open-mask-bg: var(--nroj-sand) !important;
+
+
+    /* -------------------------------------------------------------------------
+       sidebar
+       ------------------------------------------------------------------------- */
+
+    --component-sidebar-bg: var(--nroj-panel-strong) !important;
+
+    --sidebar-surface: var(--nroj-panel-strong) !important;
+    --sidebar-surface-primary: var(--nroj-panel-strong) !important;
+
+    --sidebar-surface-secondary:
+        color-mix(in srgb, var(--nroj-sand) 78%, var(--nroj-rust)) !important;
+
+    --sidebar-surface-tertiary: var(--nroj-active) !important;
+
+    --sidebar-title-primary: var(--nroj-text-secondary) !important;
+    --sidebar-body-primary: var(--nroj-ink) !important;
+    --sidebar-icon: var(--nroj-bark) !important;
+
+
+    /* -------------------------------------------------------------------------
+       text
+       ------------------------------------------------------------------------- */
+
+    --text-primary: var(--nroj-ink) !important;
+    --text-secondary: var(--nroj-text-secondary) !important;
+
+    /* intentionally stronger than chatgpt's default tertiary text */
+    --text-tertiary: var(--nroj-text-muted) !important;
+
+    --text-quaternary:
+        color-mix(in srgb, var(--nroj-bark) 72%, transparent) !important;
+
+    --text-placeholder: var(--nroj-text-muted) !important;
+
+
+    /* -------------------------------------------------------------------------
+       icons
+       ------------------------------------------------------------------------- */
+
+    --icon-primary: var(--nroj-ink) !important;
+    --icon-secondary: var(--nroj-bark) !important;
+    --icon-tertiary: var(--nroj-text-muted) !important;
+
+
+    /* -------------------------------------------------------------------------
+       user messages
+       ------------------------------------------------------------------------- */
+
+    --theme-user-msg-bg: var(--nroj-warm-strong) !important;
+    --theme-user-msg-text: var(--nroj-ink) !important;
+
+
+    /* -------------------------------------------------------------------------
+       submit button
+       ------------------------------------------------------------------------- */
+
+    --theme-submit-btn-bg: var(--nroj-ink) !important;
+    --theme-submit-btn-text: var(--nroj-sand) !important;
+
+
+    /* -------------------------------------------------------------------------
+       secondary buttons
+       ------------------------------------------------------------------------- */
+
+    --theme-secondary-btn-bg: var(--nroj-panel) !important;
+    --theme-secondary-btn-text: var(--nroj-ink) !important;
+
+
+    /* -------------------------------------------------------------------------
+       accent
+       ------------------------------------------------------------------------- */
+
+    --theme-entity-accent: var(--nroj-rust) !important;
+    --theme-accent-text: var(--nroj-rust) !important;
+
+    --theme-accent-pill-bg-rest: var(--nroj-warm) !important;
+    --theme-accent-pill-bg-hover: var(--nroj-hover) !important;
+
+    --theme-accent-pill-text-rest: var(--nroj-ink) !important;
+    --theme-accent-pill-text-hover: var(--nroj-ink) !important;
+
+
+    /* -------------------------------------------------------------------------
+       links / selection
+       ------------------------------------------------------------------------- */
+
+    --link: var(--nroj-rust) !important;
+    --link-hover: var(--nroj-bark) !important;
+
+    --selection:
+        color-mix(in srgb, var(--nroj-rust) 34%, var(--nroj-sand)) !important;
+
+
+    /* -------------------------------------------------------------------------
+       tooltip
+       ------------------------------------------------------------------------- */
+
+    --bg-tooltip: var(--nroj-ink) !important;
+
+
+    /* -------------------------------------------------------------------------
+       general interaction system
+       ------------------------------------------------------------------------- */
+
+    --surface-hover: var(--nroj-hover) !important;
+
+    --interactive-bg-secondary-default: transparent !important;
+    --interactive-bg-secondary-inactive: transparent !important;
+
+    --interactive-bg-secondary-hover: var(--nroj-hover) !important;
+    --interactive-bg-secondary-press: var(--nroj-active) !important;
+    --interactive-bg-secondary-selected: var(--nroj-active) !important;
+
+    --interactive-bg-hover-secondary: var(--nroj-hover) !important;
+    --interactive-bg-press-secondary: var(--nroj-active) !important;
+
+
+    /* -------------------------------------------------------------------------
+       primary interactions
+       ------------------------------------------------------------------------- */
+
+    --interactive-bg-hover-primary:
+        color-mix(in srgb, var(--nroj-bark) 75%, var(--nroj-ink)) !important;
+
+    --interactive-bg-press-primary: var(--nroj-ink) !important;
+    --interactive-bg-primary-selected: var(--nroj-bark) !important;
+
+
+    /* -------------------------------------------------------------------------
+       accent interactions
+       ------------------------------------------------------------------------- */
+
+    --interactive-bg-hover-accent:
+        color-mix(in srgb, var(--nroj-rust) 88%, var(--nroj-bark)) !important;
+
+    --interactive-bg-press-accent:
+        color-mix(in srgb, var(--nroj-rust) 74%, var(--nroj-bark)) !important;
+
+
+    /* -------------------------------------------------------------------------
+       interactive-button aliases
+       ------------------------------------------------------------------------- */
+
+    --interactive-button-bg-hover-primary:
+        var(--interactive-bg-hover-primary) !important;
+
+    --interactive-button-bg-hover-secondary:
+        var(--nroj-hover) !important;
+
+    --interactive-button-bg-hover-accent:
+        var(--interactive-bg-hover-accent) !important;
+
+    --interactive-button-bg-press-primary:
+        var(--nroj-ink) !important;
+
+    --interactive-button-bg-press-secondary:
+        var(--nroj-active) !important;
+
+    --interactive-button-bg-press-accent:
+        var(--interactive-bg-press-accent) !important;
+
+
+    /* -------------------------------------------------------------------------
+       danger interactions
+       ------------------------------------------------------------------------- */
+
+    --interactive-bg-hover-danger-ghost:
+        color-mix(in srgb, var(--nroj-rust) 18%, transparent) !important;
+
+    --interactive-bg-press-danger-ghost:
+        color-mix(in srgb, var(--nroj-rust) 28%, transparent) !important;
+
+    --interactive-bg-selected-danger-ghost:
+        color-mix(in srgb, var(--nroj-rust) 22%, transparent) !important;
+}
+
+
+/* =============================================================================
+   main sidebar divider
+   ============================================================================= */
+
+html:not(.dark) #stage-slideover-sidebar {
+    --border-extra-light: var(--nroj-ink) !important;
+}
+
+
+/* =============================================================================
+   menu-item states
+   ============================================================================= */
+
+html:not(.dark) .__menu-item:not([data-color="danger"]) {
+    --menu-item-background: transparent !important;
+
+    --menu-item-highlighted: var(--nroj-hover) !important;
+    --menu-item-active: var(--nroj-active) !important;
+    --menu-item-open: var(--nroj-active) !important;
+
+    --menu-item-pressed:
+        color-mix(in srgb, var(--nroj-active) 76%, var(--nroj-rust)) !important;
+}
+
+
+/* =============================================================================
+   popovers
+   ============================================================================= */
+
+html:not(.dark) .popover {
+    --main-surface-primary: var(--nroj-popover) !important;
+    --main-surface-secondary: var(--nroj-panel) !important;
+    --main-surface-tertiary: var(--nroj-warm) !important;
+
+    --bg-primary: var(--nroj-popover) !important;
+    --bg-secondary: var(--nroj-panel) !important;
+    --bg-tertiary: var(--nroj-warm) !important;
+
+    --bg-elevated-primary: var(--nroj-popover) !important;
+    --bg-elevated-secondary: var(--nroj-warm) !important;
+
+    --surface-hover: var(--nroj-hover) !important;
+
+    --interactive-bg-secondary-hover: var(--nroj-hover) !important;
+    --interactive-bg-secondary-press: var(--nroj-active) !important;
+    --interactive-bg-secondary-selected: var(--nroj-active) !important;
+
+    --interactive-bg-hover-secondary: var(--nroj-hover) !important;
+    --interactive-bg-press-secondary: var(--nroj-active) !important;
+}
+
+
+/* =============================================================================
+   tooltips
+   ============================================================================= */
+
+html:not(.dark) :where(.puik-root),
+html:not(.dark) :where(.puik-root [data-theme="light"]) {
+    --tooltip-background-color: var(--nroj-ink) !important;
+    --tooltip-text-color: var(--nroj-sand) !important;
+
+    --tooltip-compact-background-color: var(--nroj-ink) !important;
+    --tooltip-compact-text-color: var(--nroj-sand) !important;
+}
+
+
+/* =============================================================================
+   inline code
+   ============================================================================= */
+
+html:not(.dark) .prose {
+    --tw-prose-inline-code-bg: var(--nroj-panel-strong) !important;
+}
+
+
+/* =============================================================================
+   file / source citation pills
+   ============================================================================= */
+
+html:not(.dark) [data-file-citation-group-identity] > button {
+    background-color: var(--nroj-panel-strong) !important;
+}
+
+html:not(.dark) [data-file-citation-group-identity] > button:hover {
+    background-color: var(--nroj-hover) !important;
+}
+
+
+/* =============================================================================
+   settings category sidebar
+   ============================================================================= */
+
+html:not(.dark) [data-testid="modal-settings"] :has(> [data-settings-tab-list]) {
+    background-color: var(--nroj-panel-strong) !important;
+    --border-extra-light: var(--nroj-ink) !important;
+}
+
+
+/* =============================================================================
+   settings design-system surfaces
+   ============================================================================= */
+
+html:not(.dark) [data-testid="modal-settings"],
+html:not(.dark) [data-testid="modal-settings"] :where(.puik-root),
+html:not(.dark) [data-testid="modal-settings"] :where(.puik-root [data-theme]) {
+    --color-surface: var(--nroj-sand) !important;
+    --color-surface-secondary: var(--nroj-panel) !important;
+    --color-surface-tertiary: var(--nroj-warm) !important;
+
+    --color-surface-elevated: var(--nroj-popover) !important;
+    --color-surface-elevated-secondary: var(--nroj-panel) !important;
+
+    --bg-primary: var(--nroj-sand) !important;
+    --bg-secondary: var(--nroj-panel) !important;
+    --bg-tertiary: var(--nroj-warm) !important;
+
+    --bg-elevated-primary: var(--nroj-popover) !important;
+
+
+    /* switches */
+
+    --switch-track-color: var(--nroj-panel-strong) !important;
+    --switch-track-color-hover: var(--nroj-hover) !important;
+
+    --switch-track-color-checked: var(--nroj-rust) !important;
+
+    --switch-track-color-disabled: var(--nroj-panel) !important;
+
+    --switch-track-color-checked-disabled:
+        color-mix(
+            in srgb,
+            var(--nroj-rust) 55%,
+            var(--nroj-panel)
+        ) !important;
+
+    --switch-thumb-color: var(--nroj-sand) !important;
+    --switch-thumb-color-disabled: var(--nroj-panel) !important;
+
+
+    /* sliders */
+
+    --slider-track-color: var(--nroj-panel-strong) !important;
+    --slider-range-color: var(--nroj-rust) !important;
+
+
+    /* segmented controls */
+
+    --segmented-control-background: var(--nroj-panel) !important;
+    --segmented-control-thumb-background: var(--nroj-sand) !important;
+
+    --segmented-control-option-highlight-background-color:
+        var(--nroj-hover) !important;
+}
+
+
+/* =============================================================================
+   settings search
+   ============================================================================= */
+
+html:not(.dark) [data-testid="modal-settings"] input[name="settings-search"] {
+    background-color: var(--nroj-panel) !important;
+    border-color: var(--nroj-bark) !important;
+    color: var(--nroj-ink) !important;
+}
+
+html:not(.dark) [data-testid="modal-settings"] input[name="settings-search"]::placeholder {
+    color: var(--nroj-text-muted) !important;
+    opacity: 1 !important;
+}
+
+
+/* =============================================================================
+   radix settings switches
+   ============================================================================= */
+
+html:not(.dark)
+    [data-testid="modal-settings"]
+    [role="switch"][data-state="unchecked"] {
+    background-color: var(--nroj-panel-strong) !important;
+}
+
+html:not(.dark)
+    [data-testid="modal-settings"]
+    [role="switch"][data-state="checked"] {
+    background-color: var(--nroj-rust) !important;
+}
+
+html:not(.dark)
+    [data-testid="modal-settings"]
+    [role="switch"] > span {
+    background-color: var(--nroj-sand) !important;
+}
+
+
+/* =============================================================================
+   settings dropdowns
+   ============================================================================= */
+
+html:not(.dark)
+    [data-testid="modal-settings"]
+    :is(select, .form-select, [role="combobox"]) {
+    background-color: var(--nroj-sand) !important;
+    color: var(--nroj-ink) !important;
+}
+
+
+/* =============================================================================
+   literal-white settings buttons
+   ============================================================================= */
+
+html:not(.dark)
+    [data-testid="modal-settings"]
+    button:is(
+        [class~="bg-white"],
+        [class~="!bg-white"],
+        [class~="bg-white!"]
+    ) {
+    background-color: var(--nroj-sand) !important;
+
+    box-shadow:
+        inset 0 0 0 1px
+        color-mix(in srgb, var(--nroj-bark) 42%, transparent) !important;
+}
+
+
+/* =============================================================================
+   thinking-effort slider
+   ============================================================================= */
+
+
+/* track */
+
+html:not(.dark)
+    [data-model-reasoning-effort-slider]
+    ._9wXMRW_Track {
+    background: var(--nroj-panel-strong) !important;
+}
+
+
+/* filled range */
+
+html:not(.dark)
+    [data-model-reasoning-effort-slider]
+    ._9wXMRW_Range {
+    background: var(--nroj-rust) !important;
+}
+
+
+/* thumb */
+
+html:not(.dark)
+    [data-model-reasoning-effort-slider]
+    ._9wXMRW_Thumb {
+    background: var(--nroj-sand) !important;
+    border-color: var(--nroj-bark) !important;
+    color: var(--nroj-ink) !important;
+}
+
+
+/* selected ticks */
+
+html:not(.dark)
+    [data-model-reasoning-effort-slider]
+    ._9wXMRW_Tick[data-selected="true"] {
+    background-color: var(--nroj-sand) !important;
+}
+
+
+/* unselected ticks */
+
+html:not(.dark)
+    [data-model-reasoning-effort-slider]
+    ._9wXMRW_Tick[data-selected="false"] {
+    background-color:
+        color-mix(in srgb, var(--nroj-bark) 65%, transparent) !important;
+}
+
+
+/* =============================================================================
+   charts
+   ============================================================================= */
+
+
+/* bars */
+
+html:not(.dark)
+    [data-testid="modal-settings"]
+    .recharts-bar-rectangle
+    .recharts-rectangle {
+    fill: var(--nroj-rust) !important;
+}
+
+
+/* lines */
+
+html:not(.dark)
+    [data-testid="modal-settings"]
+    .recharts-line-curve {
+    stroke: var(--nroj-rust) !important;
+}
+
+
+/* area fill */
+
+html:not(.dark)
+    [data-testid="modal-settings"]
+    .recharts-area-area {
+    fill:
+        color-mix(in srgb, var(--nroj-rust) 34%, transparent) !important;
+}
+
+
+/* area outline */
+
+html:not(.dark)
+    [data-testid="modal-settings"]
+    .recharts-area-curve {
+    stroke: var(--nroj-rust) !important;
+}
+
+
+/* dots */
+
+html:not(.dark)
+    [data-testid="modal-settings"]
+    :is(
+        .recharts-dot,
+        .recharts-active-dot,
+        .recharts-reference-dot,
+        .recharts-scatter-symbol
+    ),
+html:not(.dark)
+    [data-testid="modal-settings"]
+    :is(
+        .recharts-dot,
+        .recharts-active-dot,
+        .recharts-reference-dot,
+        .recharts-scatter-symbol
+    ) * {
+    fill: var(--nroj-rust) !important;
+    stroke: var(--nroj-rust) !important;
+}
+
+
+/* =============================================================================
+   known hard-coded interaction escapes
+   ============================================================================= */
+
+
+/* focus:bg-black/4 */
+
+html:not(.dark) [class~="focus:bg-black/4"]:focus {
+    background-color: var(--nroj-hover) !important;
+}
+
+
+/* hover:bg-black/5 */
+
+html:not(.dark) [class~="hover:bg-black/5"]:hover {
+    background-color: var(--nroj-hover) !important;
+}
+
+
+/* hover:bg-black/[0.04] */
+
+html:not(.dark) [class~="hover:bg-black/[0.04]"]:hover {
+    background-color: var(--nroj-hover) !important;
+}
+
+
+/* btn-ghost hard-coded hover */
+
+html:not(.dark) .btn-ghost:not(:disabled):not([data-disabled]):hover {
+    background-color: var(--nroj-hover) !important;
+}
+
+
+/* =============================================================================
+   hard-coded #f4f4f4 surfaces
+   ============================================================================= */
+
+html:not(.dark) [class~="bg-[#f4f4f4]"] {
+    background-color: var(--nroj-panel-strong) !important;
+}
+
+html:not(.dark) [class~="bg-[#f4f4f4]"]:hover {
+    background-color: var(--nroj-hover) !important;
+}
