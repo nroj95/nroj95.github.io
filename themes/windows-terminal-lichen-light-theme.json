@@ -1,0 +1,23 @@
+{
+    "background": "#F7FFDD",
+    "black": "#000000",
+    "blue": "#101076",
+    "brightBlack": "#4A4A4A",
+    "brightBlue": "#5454FF",
+    "brightCyan": "#40C3C3",
+    "brightGreen": "#40C340",
+    "brightPurple": "#FF54FF",
+    "brightRed": "#FF5454",
+    "brightWhite": "#A6A6A6",
+    "brightYellow": "#A6A636",
+    "cursorColor": "#A59F80",
+    "cyan": "#107676",
+    "foreground": "#000000",
+    "green": "#107610",
+    "name": "Lichen Light",
+    "purple": "#761076",
+    "red": "#761010",
+    "selectionBackground": "#78A0A0",
+    "white": "#767676",
+    "yellow": "#764510"
+}
