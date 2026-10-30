@@ -28,11 +28,6 @@
 
             /* warm parchment base */
             --background: var(--parchment);
-            --background-glow: color-mix(
-                in srgb,
-                var(--parchment) 78%,
-                var(--brick) 22%
-            );
 
             /* earthy layered surfaces */
             --panel: color-mix(
@@ -75,7 +70,6 @@
 
         body {
             margin: 0;
-            min-height: 100vh;
             background: var(--background);
             color: var(--text);
             font-family: system-ui, "Segoe UI", sans-serif;
@@ -175,7 +169,6 @@
             color: var(--muted);
             font-size: 0.9rem;
             font-weight: 650;
-            text-transform: lowercase;
         }
 
         .links {
